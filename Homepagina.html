@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <!-- linken van css en js -->
+    <link rel="stylesheet" href="homepage.css">
+    <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["fname"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+        </script>
+</head>
+<body>
+    <header>BMI calculator</header>
+
+    <main>
+        <form name="bmi_berekenen"  onsubmit="return validateForm()" method="post">
+            <label for="leeftijd">leeftijd: </label>
+            <input type="number" name="leeftijd">
+
+            <label for="leeftijd">lengte: </label>
+            <input type="number" name="lengte">
+
+            <label for="leeftijd">gewicht: </label>
+            <input type="number" name="gewicht">
+            
+            <input type="submit" value="Submit">
+          </form>
+          
+    </main>
+    <script src="homepage.js"></script>
+</body>
+</html>
