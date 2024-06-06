@@ -7,29 +7,25 @@
 
     <!-- linken van css en js -->
     <link rel="stylesheet" href="homepage.css">
-    <script>
-        function validateForm() {
-          let x = document.forms["myForm"]["fname"].value;
-          if (x == "") {
-            alert("Name must be filled out");
-            return false;
-          }
-        }
-        </script>
+
 </head>
 <body>
-    <header>BMI calculator</header>
+    <header><p>CALCURERN</p></header>
 
     <main>
-        <form name="bmi_berekenen"  onsubmit="return validateForm()" method="post">
+
+        
+        <p id="headerTekst"></p>
+        <form id="bmi_berekenen"   method="post">
+            
             Leeftijd:
-            <input type="number" name="leeftijd">
+            <input type="number" name="leeftijd" required>
 
             Lengte:
-            <input type="number" name="lengte" placeholder="cm">
+            <input type="number" name="lengte" placeholder="cm" required>
 
             Gewicht:
-            <input type="number" name="gewicht" placeholder="kg">
+            <input type="number" name="gewicht" placeholder="kg" required>
             
             <input type="submit" value="Bereken">
           </form>
