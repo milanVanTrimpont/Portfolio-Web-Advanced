@@ -8,7 +8,8 @@ document.getElementById("headerTekst").innerHTML = headerTekst;
 
 /*---BMI---*/ 
 
-const bmi_categorie = {
+const bmi_categorie = 
+{
     ondergewicht: 18.5,
     gezond: 25,
     overgewicht: 30,
@@ -18,11 +19,12 @@ const bmi_categorie = {
 
 let bmiBerekenen = document.getElementById("bmi_berekenen");
 
-bmiBerekenen.addEventListener("submit", (event) => 
+/*BMI berekenen*/
+bmiBerekenen.addEventListener("submit", async (event) => 
 {
     event.preventDefault();
     
-    
+    // variabele aanmaken
     let leeftijd = bmiBerekenen["leeftijd"].value;
     let lengte = bmiBerekenen["lengte"].value;
     let gewicht = bmiBerekenen["gewicht"].value;
@@ -47,10 +49,18 @@ bmiBerekenen.addEventListener("submit", (event) =>
             return false;
         }
 
-    // BMI berekenen
+        // BMI berekenen van de ingevoerde waardes via de functie
+        const { bmi, categorie } = await bmiBerekening(lengte, gewicht);
+
+            const resultaat = document.getElementById("resultaat");
+            resultaat.innerHTML = "Je hebt een BMI van: " + bmi.toFixed(1) + " en je valt in de categorie: " + categorie;
+
+
+// BMI berekenen functie
+async function bmiBerekening(lengte, gewicht) {
     lengte = lengte / 100; 
-    let bmi = gewicht / (lengte * lengte);
-    
+    const bmi = gewicht / (lengte * lengte);
+
     // Categorie bepalen
     let categorie = '';
     switch (true) {
@@ -73,8 +83,10 @@ bmiBerekenen.addEventListener("submit", (event) =>
             categorie = 'Onbekend';
             break;
     }
-    let resultaat = document.getElementById("resultaat");
-    resultaat.innerHTML = "Je hebt een BMI van: " + bmi.toFixed(1) + " en je valt in de categorie: " + categorie;
 
+    return { bmi, categorie };
+}
+    
+    
 });
 
