@@ -16,7 +16,7 @@
     <main>
 
         <div class="BMI">
-        <p id="headerTekst"></p>
+        <h2 id="headerTekst"></h2>
         <form id="bmi_berekenen" method="post">
             
             Leeftijd:
@@ -45,8 +45,9 @@
         </div>  
 
         <div class="standaard">
-            <button id="standaardWaardenM">standaard waarden man</button>
-            <button id="standaardWaardenV">standaard waarden Vrouw</button>
+            <h2>Standaard waarden</h2>
+            <button id="standaardWaardenM">man</button>
+            <button id="standaardWaardenV">Vrouw</button>
             <button id="obesitas">obesitas</button>
             <div id="weergaven">
                 <p id="leeftijd"></p>
@@ -56,9 +57,39 @@
                 <p id="categorie"></p>
             </div>
         </div>
+
+    </div>
+
+    <div class="onderste2">
+
+        <div class="toegevoegd">
+            <p id="toegevoegdTekst"></p>
+            <table id="TabelGegevens">
+                <tr>
+                  <th>Leeftijd</th>
+                  <th>lengte</th>
+                  <th>gewicht</th>
+                  <th>bmi</th>
+                  <th>categorie</th>
+                </tr>
+                <tr>
+                  <td id="leeftijdT"></td>
+                  <td id="lengteT"></td>
+                  <td id="gewichtT"></td>
+                  <td id="bmiT"></td>
+                  <td id="categorieT"></td>
+                </tr>
+              </table>
+        </div>
+
+        <div class="overschot">
+
+        </div>
+    </div>
+
     </main>
 
-</div>
+
     <script src="homepage.js"></script>
 </body>
 </html>

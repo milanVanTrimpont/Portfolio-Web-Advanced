@@ -6,6 +6,8 @@ let headerTekst = "BMI Calculator";
 document.getElementById("headerTekst").innerHTML = headerTekst;
 
 
+
+
 /*---BMI---*/ 
 
 const bmi_categorie = 
@@ -56,6 +58,44 @@ bmiBerekenen.addEventListener("submit", async (event) =>
             const resultaat = document.getElementById("resultaat");
             resultaat.innerHTML = "Je hebt een BMI van: " + bmi.toFixed(1) + " en je valt in de categorie: " + categorie;
             
+
+            let toegevoegdTekst = document.getElementById("toegevoegdTekst");
+
+            let data = 
+            {
+                leeftijd: leeftijd,
+                lengte: lengte,
+                gewicht: gewicht,
+                bmi: bmi,
+                categorie: categorie
+            };
+        
+            let jsonData = JSON.stringify(data);
+            //localStorage.setItem('data', jsonData);
+        
+            toegevoegdTekst.innerHTML = "De waardes zijn opgeslagen";
+        
+            // toon ook al deze waardes
+            // nieuwe rij maken en gegevens tonen
+            let tabel = document.getElementById("TabelGegevens");
+            let nieuweRij = tabel.insertRow(-1); // Voeg een nieuwe rij toe aan het einde van de tabel
+
+            let leeftijdCel = nieuweRij.insertCell(0);
+            let lengteCel = nieuweRij.insertCell(1);
+            let gewichtCel = nieuweRij.insertCell(2);
+            let bmiCel = nieuweRij.insertCell(3);
+            let categorieCel = nieuweRij.insertCell(4);
+
+            leeftijdCel.innerHTML = data.leeftijd + " jaar";
+            lengteCel.innerHTML = data.lengte + " cm";
+            gewichtCel.innerHTML = data.gewicht + " kg";
+            bmiCel.innerHTML = data.bmi.toFixed(1);
+            categorieCel.innerHTML = data.categorie;
+                
+            
+
+
+
 
     // De animatie-element selecteren
     const animateDiv = document.querySelector('.animate .kleur');
@@ -187,3 +227,5 @@ document.getElementById('obesitas').addEventListener('click', () =>
         document.getElementById("categorie").innerHTML = "Categorie: " + localStorage.getItem('categorieO');
     });
 
+
+// sla via json de waardes op van de form bmi_berekenen en laat deze tonen tonen bij toegevoegdTekst

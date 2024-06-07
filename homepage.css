@@ -1,5 +1,6 @@
 body {
     margin: 0;
+
   }
   
   .grid-container {
@@ -29,8 +30,9 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid #333;
-    height: 50vh;
+    border-left: 1px solid #333;
+
+    height: 40vh;
     width: 50vw;
   }
   
@@ -130,7 +132,68 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid #333;
-    height: 50vh;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+    height: 40vh;
     width: 50vw;
 }
+
+.onderste2 {
+    display: flex;
+    justify-content: space-between; /* Om de divs aan de uiteinden van de container te plaatsen */
+}
+
+.toegevoegd
+{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    height: 40vh;
+    width: 50vw;
+    align-items: center;
+}
+
+.toegevoegd button
+{
+    width: 100px;
+    height: 30px;
+}
+
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+th
+{
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+td
+{
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 10px;
+}
+
+
+.overschot
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+    height: 40vh;
+    width: 50vw;
+}
+
+#leeftijdT, #gewichtT, #lengteT, #bmiT, #categorieT
+{
+    display: none;
+}
+
