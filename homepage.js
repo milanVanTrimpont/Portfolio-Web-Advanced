@@ -55,6 +55,8 @@ bmiBerekenen.addEventListener("submit", async (event) =>
             const resultaat = document.getElementById("resultaat");
             resultaat.innerHTML = "Je hebt een BMI van: " + bmi.toFixed(1) + " en je valt in de categorie: " + categorie;
 
+            const alleKleuren = document.querySelector('.alleKleuren');
+            alleKleuren.classList.add('animate');
 
 // BMI berekenen functie
 async function bmiBerekening(lengte, gewicht) {

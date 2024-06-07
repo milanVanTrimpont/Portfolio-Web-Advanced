@@ -20,3 +20,65 @@ main
     border: 1px solid #333;
 }
 
+.alleKleuren
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.groen
+{
+    width: 50px;
+    height: 50px;
+    color: green;
+    background-color: green;
+}
+
+.geel
+{
+    width: 50px;
+    height: 50px;
+    color: yellow;
+    background-color: yellow;
+}
+
+.oranje
+{
+    width: 50px;
+    height: 50px;
+    color: orange;
+    background-color: orange;
+}
+
+.rood
+{
+    width: 50px;
+    height: 50px;
+    color: red;
+    background-color: red;
+}
+
+.animate .groen,
+.animate .geel,
+.animate .oranje,
+.animate .rood 
+{
+    animation-duration: 3s;
+    animation-name: kleuren;
+}
+
+@keyframes kleuren 
+{
+    from 
+    {
+        transform: translateX(-300px);
+    }
+
+    to 
+    {
+        transform: translateX(0px);
+    }
+}
