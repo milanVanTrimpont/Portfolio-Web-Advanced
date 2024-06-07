@@ -1,84 +1,108 @@
-body
-{
+body {
     margin: 0;
-}
-
-header
-{
+  }
+  
+  header {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1em;
-}
-
-main
-{   
-    padding: 2%;
+  }
+  
+  main {
+    padding-top: 2%;
     justify-content: center;
     align-items: center;
     text-align: center;
     border: 1px solid #333;
-}
-
-.alleKleuren
-{
+    height: 50vh;
+    width: 50vw;
+  }
+  
+  .alleKleuren {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-
-.groen
-{
+    margin-bottom: -50px;
+  }
+  
+  .groen,
+  .geel,
+  .oranje,
+  .rood,
+  .kleur {
     width: 50px;
     height: 50px;
-    color: green;
+  }
+  
+  .groen {
     background-color: green;
-}
-
-.geel
-{
-    width: 50px;
-    height: 50px;
-    color: yellow;
+  }
+  
+  .geel {
     background-color: yellow;
-}
-
-.oranje
-{
-    width: 50px;
-    height: 50px;
-    color: orange;
+  }
+  
+  .oranje {
     background-color: orange;
-}
-
-.rood
-{
-    width: 50px;
-    height: 50px;
-    color: red;
+  }
+  
+  .rood {
     background-color: red;
-}
+  }
+  
+  .animate {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .animate .kleur {
+    position: absolute; /* Absolute positioning */
+    height: 50px;
+    transition: width 3s ease-in-out, background-color 3s ease-in-out;
+  }
+  
+  .animate .groen.animate {
+    background-color: green;
+    width: 200px;
+  }
+  
+  .animate .geel.animate {
+    background-color: yellow;
+    width: 200px;
+  }
+  
+  .animate .oranje.animate {
+    background-color: orange;
+    width: 200px;
+  }
+  
+  .animate .rood.animate {
+    background-color: red;
+    width: 200px;
+  }
 
-.animate .groen,
-.animate .geel,
-.animate .oranje,
-.animate .rood 
+@keyframes kleuren
 {
-    animation-duration: 3s;
-    animation-name: kleuren;
-}
-
-@keyframes kleuren 
-{
-    from 
-    {
-        transform: translateX(-300px);
-    }
-
-    to 
+    0%
     {
         transform: translateX(0px);
+        width: 50px;
+    }
+    25%
+    {
+        transform: translateX(0px);
+        width: 100px;
+    }
+    50%
+    {
+        transform: translateX(0px);
+        width: 150px;
+    }
+    75%
+    {
+        transform: translateX(0px);
+        width: 200px;
     }
 }

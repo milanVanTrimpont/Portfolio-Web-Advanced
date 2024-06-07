@@ -9,7 +9,8 @@ document.getElementById("headerTekst").innerHTML = headerTekst;
 /*---BMI---*/ 
 
 const bmi_categorie = 
-{
+{   
+    ernstig_ondergewicht: 12.5,
     ondergewicht: 18.5,
     gezond: 25,
     overgewicht: 30,
@@ -54,10 +55,32 @@ bmiBerekenen.addEventListener("submit", async (event) =>
 
             const resultaat = document.getElementById("resultaat");
             resultaat.innerHTML = "Je hebt een BMI van: " + bmi.toFixed(1) + " en je valt in de categorie: " + categorie;
+            
 
-            const alleKleuren = document.querySelector('.alleKleuren');
-            alleKleuren.classList.add('animate');
+    // De animatie-element selecteren
+    const animateDiv = document.querySelector('.animate .kleur');
+    animateDiv.className = 'kleur'; // Reset de class om animatie opnieuw te starten
+    
 
+
+    // De juiste kleur en breedte instellen op basis van de categorie
+    if (categorie === 'Gezond gewicht') 
+    {
+        animateDiv.classList.add('groen', 'animate');
+    } 
+    else if (categorie === 'Ondergewicht' || categorie === 'Overgewicht') 
+    {
+        animateDiv.classList.add('geel', 'animate');
+    } 
+    else if (categorie === 'Obesitas') {
+        animateDiv.classList.add('oranje', 'animate');
+    } 
+    else if (categorie === 'Ernstige obesitas' || categorie === 'Ernstig ondergewicht') 
+        {
+        animateDiv.classList.add('rood', 'animate');
+    }
+});
+           
 // BMI berekenen functie
 async function bmiBerekening(lengte, gewicht) {
     lengte = lengte / 100; 
@@ -66,6 +89,9 @@ async function bmiBerekening(lengte, gewicht) {
     // Categorie bepalen
     let categorie = '';
     switch (true) {
+        case (bmi < bmi_categorie.ernstig_ondergewicht):
+            categorie = 'Ernstig ondergewicht';
+            break;
         case (bmi < bmi_categorie.ondergewicht):
             categorie = 'Ondergewicht';
             break;
@@ -78,7 +104,7 @@ async function bmiBerekening(lengte, gewicht) {
         case (bmi <= bmi_categorie.obesitas):
             categorie = 'Obesitas';
             break;
-        case (bmi > bmi_categorie.ernstig_obees):
+        case (bmi > bmi_categorie.obesitas):
             categorie = 'Ernstige obesitas';
             break;
         default:
@@ -90,5 +116,5 @@ async function bmiBerekening(lengte, gewicht) {
 }
     
     
-});
+
 
