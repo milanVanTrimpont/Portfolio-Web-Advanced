@@ -10,13 +10,14 @@
 
 </head>
 <body>
-    <header><p>CALCUREREN</p></header>
+    <div class="grid-container">
+    <header><p>BMI</p></header>
 
     <main>
 
-        
+        <div class="BMI">
         <p id="headerTekst"></p>
-        <form id="bmi_berekenen"   method="post">
+        <form id="bmi_berekenen" method="post">
             
             Leeftijd:
             <input type="number" name="leeftijd" required>
@@ -41,8 +42,23 @@
           <div class="animate">
             <div class="kleur"></div>
           </div>
-          
+        </div>  
+
+        <div class="standaard">
+            <button id="standaardWaardenM">standaard waarden man</button>
+            <button id="standaardWaardenV">standaard waarden Vrouw</button>
+            <button id="obesitas">obesitas</button>
+            <div id="weergaven">
+                <p id="leeftijd"></p>
+                <p id="lengte"></p>
+                <p id="gewicht"></p>
+                <p id="bmi"></p>
+                <p id="categorie"></p>
+            </div>
+        </div>
     </main>
+
+</div>
     <script src="homepage.js"></script>
 </body>
 </html>
