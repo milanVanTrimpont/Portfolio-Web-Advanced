@@ -1,5 +1,5 @@
 # Portfolio-Web-Advanced
-Ik heb een website gemaakt waar je je bmi kunt berekenen, de bmi van de standaard man en vrouw kunt zien of het verschil kunt bereken tussen 2 personen.
+Ik heb een website gemaakt waar je je bmi kunt berekenen, de bmi van de standaard man en vrouw kunt bekijken of het verschil kunt berekenen tussen 2 personen.
 ### uitleg + Bronnenvermelding
 **Elementen selecteren**
   - Ik heb dit gebruikt met getElementById.
