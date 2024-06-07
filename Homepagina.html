@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>BMI calculator Milan Van Trimpont</title>
 
     <!-- linken van css en js -->
     <link rel="stylesheet" href="homepage.css">
@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="grid-container">
-    <header><p>BMI</p></header>
+    <header><p>PORTFOLIO Milan Van Trimpont</p></header>
 
     <main>
 
@@ -83,12 +83,31 @@
         </div>
 
         <div class="overschot">
+            <h2>Berekening</h2>
+            <p>Bereken het verschil tussen 2 personen, <br>
+            alle speciale gegevens worden worden gegeven
+            </p>
 
+            <form id="verschil_Berekenen" method="post">
+                &nbsp;Lengte 1: 
+                <input type="number" name="lengte1" placeholder="cm" required>
+                &nbsp;Lengte 2:
+                <input type="number" name="lengte2" placeholder="cm" required><br>
+                Gewicht 1:
+                <input type="number" name="gewicht1" placeholder="kg" required>
+                Gewicht 2:
+                <input type="number" name="gewicht2" placeholder="kg" required><br>
+                <input type="submit" value="Bereken">
+                <div id="alleGegevens"></div>
+                <div id="verschil"></div>
         </div>
     </div>
 
-    </main>
 
+    </main>
+    <footer>
+        <p id="footer"></p>
+    </footer>
 
     <script src="homepage.js"></script>
 </body>

@@ -1,13 +1,14 @@
 body {
     margin: 0;
-
+    overflow: hidden;
   }
   
   .grid-container {
     display: grid;
     grid-template-areas:
       'header header header header'
-      'BMI BMI standaard standaard';
+      'BMI BMI standaard standaard'
+      'footer footer footer footer';
     
   }
   
@@ -30,8 +31,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-left: 1px solid #333;
-
+    border-bottom: 1px solid #333;
     height: 40vh;
     width: 50vw;
   }
@@ -147,7 +147,6 @@ body {
 {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #333;
     border-bottom: 1px solid #333;
     height: 40vh;
     width: 50vw;
@@ -183,7 +182,8 @@ td
 .overschot
 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /*justify-content: center;*/
     align-items: center;
     text-align: center;
     border-bottom: 1px solid #333;
@@ -197,3 +197,22 @@ td
     display: none;
 }
 
+input[type="submit"] {
+    margin-top: 10px;
+    background-color: rgb(0, 124, 165);
+    color: rgb(191, 219, 255);
+    width: 200px;
+    height: 30px;
+}
+
+
+footer
+{
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    height: 15vh;
+    width: 100vw;
+}

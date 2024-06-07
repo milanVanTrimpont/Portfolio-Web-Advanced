@@ -6,7 +6,15 @@ let headerTekst = "BMI Calculator";
 document.getElementById("headerTekst").innerHTML = headerTekst;
 
 
-
+/* welcom bericht */
+(function() 
+{
+    // Welkomstbericht
+    const naam = prompt("Wat is je naam?");
+    const welkomstTekst = `Welkome op mijn BMI calculator ${naam}`
+    alert(welkomstTekst);
+})
+();
 
 /*---BMI---*/ 
 
@@ -19,6 +27,17 @@ const bmi_categorie =
     obesitas: 35,
     ernstig_obees: 40
 };
+
+
+overgewicht(bmi_categorie);
+
+function overgewicht({obesitas, ernstig_obees}) 
+{
+    const message = 'Je hebt obesitas als je BMI hoger is dan ' + obesitas + ' of ernstig obees als je ' + ernstig_obees + ' of meer hebt.';
+  
+    document.getElementById("footer").innerHTML = message;
+}
+
 
 let bmiBerekenen = document.getElementById("bmi_berekenen");
 
@@ -228,4 +247,40 @@ document.getElementById('obesitas').addEventListener('click', () =>
     });
 
 
-// sla via json de waardes op van de form bmi_berekenen en laat deze tonen tonen bij toegevoegdTekst
+
+
+
+    // ophalen van de waarden
+let verschil_Berekenen = document.getElementById("verschil_Berekenen");
+
+/*BMI berekenen*/
+verschil_Berekenen.addEventListener("submit", (event) => {
+    event.preventDefault(); 
+
+    // array maken van de waardes
+    let eerste = [];
+    eerste.push(verschil_Berekenen["lengte1"].value);
+    eerste.push(verschil_Berekenen["gewicht1"].value);
+
+    let tweede = [];
+    tweede.push(verschil_Berekenen["lengte2"].value);
+    tweede.push(verschil_Berekenen["gewicht2"].value);
+
+    // samen voegen
+    let beide = [...eerste, ...tweede];
+    
+    document.getElementById("alleGegevens").innerHTML = "Alle gegevens die u ingegeven heeft " + beide;
+
+
+    // verschil berekenen
+    let lengteVerschil = eerste[0] - tweede[0];
+    let gewichtVerschil = eerste[1] - tweede[1];
+
+    // negatief teken weghalen
+    lengteVerschil = Math.abs(lengteVerschil);
+    gewichtVerschil = Math.abs(gewichtVerschil);
+    document.getElementById("verschil").innerHTML = "Het verschil in lengte is: " + lengteVerschil + " cm en het verschil in gewicht is: " + gewichtVerschil + " kg";
+    
+
+    
+});
