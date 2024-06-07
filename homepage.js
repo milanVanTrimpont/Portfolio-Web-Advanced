@@ -35,7 +35,7 @@ function overgewicht({obesitas, ernstig_obees})
 {
     const message = 'Je hebt obesitas als je BMI hoger is dan ' + obesitas + ' of ernstig obees als je ' + ernstig_obees + ' of meer hebt.';
   
-    document.getElementById("footer").innerHTML = message;
+    document.getElementById("obeesTekst").innerHTML = message;
 }
 
 

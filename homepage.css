@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    overflow: hidden;
+ overflow-x: hidden;
   }
   
   .grid-container {
@@ -17,7 +17,10 @@ body {
     background-color: #333;
     color: white;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     padding: 1em;
+    height: 4vh;
   }
 
   main
@@ -212,7 +215,7 @@ footer
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1em;
-    height: 15vh;
+    padding: 1%;
+    height: 4vh;
     width: 100vw;
 }
